@@ -10,6 +10,7 @@ This repository serves as an example repository for password protecting pages. S
     - Note that GitHub converts markdown (.md) files to .html files.
     - Because this file begins with an underscore, it will not be published when your site is deployed.
 2. Add a GitHub action/workflow for encrypting pages: [/.github/workflows/pages-with-encryption.yml](https://github.com/evanbaldonado/github-pages-jekyll-password-protection/blob/main/.github/workflows/pages-with-encryption.yml).
+    - Make sure that it targets the correct branch you want to use for deployment (see line 6: `branches: ["main"]`).
 3. Automatically deploy this repository with GitHub Pages using GitHub Actions: `Settings > Code and automation > Pages > Build and deployment > Source > Github Actions`. You can manually run this Action; it will also automatically run when you update your repository.
 
 ## Security
