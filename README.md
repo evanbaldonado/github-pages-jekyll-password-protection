@@ -1,4 +1,4 @@
-# github-pages-jekyll-password-protection
+# GitHub Pages/Jekyll Password Protection
 Automatically password protect (with encryption) certain pages on GitHub Pages/Jekyll sites using [PageCrypt](https://github.com/Greenheart/pagecrypt).
 
 ## Demo
@@ -6,17 +6,17 @@ This repository serves as an example repository for password protecting pages. S
 
 ## Usage
 1. Configure passwords for .html pages in [_protected_pages.txt](https://github.com/evanbaldonado/github-pages-jekyll-password-protection/blob/main/_protected_pages.txt).
-- Add one file per line (space-delimited in the format `filename.html password`).
+    - Add one file per line (space-delimited in the format `filename.html password`).
     - Note that GitHub converts markdown (.md) files to .html files.
     - Because this file begins with an underscore, it will not be published when your site is deployed.
-2. Add a GitHub action/workflow for encrypting pages: [./github/workflows/pages.yml](https://github.com/evanbaldonado/github-pages-jekyll-password-protection/blob/main/./github/workflows/pages.yml).
-3. Automatically deploy this repository with GitHub Pages using Github Actions: `Settings > Code and automation > Pages > Build and deployment > Source > Github Actions`.
+2. Add a GitHub action/workflow for encrypting pages: [.github/workflows/pages.yml](https://github.com/evanbaldonado/github-pages-jekyll-password-protection/blob/main/./github/workflows/pages.yml).
+3. Automatically deploy this repository with GitHub Pages using GitHub Actions: `Settings > Code and automation > Pages > Build and deployment > Source > Github Actions`. You can manually run this Action; it will also automatically run when you update your repository.
 
 ## Security
 - Static websites deployed with GitHub pages can't run server-side code, which means that traditional authentication approaches to access protected files aren't possible. Additionally, GitHub pages does not support .htaccess files, another easy way to password-protect pages.
-- This method relies on [PageCrypt](https://github.com/Greenheart/pagecrypt) to encrypt pages using the WebCrypto API. This allows the user to view/access/download pages but only see their contents with a password.
-    - Because the user can access these files, they can download them and perform a brute-force attack to attempt to unencrypt them. Your files are only as secure as the WebCrypto API, PageCrypt, _and_ your passwords.
-    - PageCrypt only encrypts .html files. For other assets (ex: .css files, .js files, and images), consider inlining them if it is important that they remain private. See [PageCrypt's documentation](https://github.com/Greenheart/pagecrypt#readme).
+- This method relies on [PageCrypt](https://github.com/Greenheart/pagecrypt) to encrypt pages using the Web Crypto API. This allows the user to view/access/download pages but only see their contents with a password.
+    - Because the user can access these files, they can download them and perform a brute-force attack to attempt to unencrypt them. Your files are only as secure as the Web Crypto API, PageCrypt, _and_ your passwords.
+    - PageCrypt only encrypts .html files. For other assets (ex: .css files, .js files, and images), consider inlining them if they must remain private. See [PageCrypt's documentation](https://github.com/Greenheart/pagecrypt#readme).
 - Note: although the password file (_protected_pages.txt) is not published along with your site, anyone with access to the repository itself can view it.
 - For more information, see [PageCrypt's documentation](https://github.com/Greenheart/pagecrypt#readme).
 
