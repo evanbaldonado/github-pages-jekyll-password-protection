@@ -9,7 +9,7 @@ This repository serves as an example repository for password protecting pages. S
     - Add one file per line (space-delimited in the format `filename.html password`).
     - Note that GitHub converts markdown (.md) files to .html files.
     - Because this file begins with an underscore, it will not be published when your site is deployed.
-2. Add a GitHub action/workflow for encrypting pages: [.github/workflows/pages.yml](https://github.com/evanbaldonado/github-pages-jekyll-password-protection/blob/main/./github/workflows/pages.yml).
+2. Add a GitHub action/workflow for encrypting pages: [/.github/workflows/pages-with-encryption.yml](https://github.com/evanbaldonado/github-pages-jekyll-password-protection/blob/main/.github/workflows/pages-with-encryption.yml).
 3. Automatically deploy this repository with GitHub Pages using GitHub Actions: `Settings > Code and automation > Pages > Build and deployment > Source > Github Actions`. You can manually run this Action; it will also automatically run when you update your repository.
 
 ## Security
@@ -27,4 +27,4 @@ This repository by [Evan Baldonado](https://evanbaldonado.com) is published unde
 Feel free to submit issues/pull requests!
 
 ## Contact
-You can submit an issue on this repository or contact [password@evanbaldonado.com](mailto:password@evanbaldonado.com) with questions. The [PageCrypt repository](https://github.com/Greenheart/pagecrypt) also has additional information about the encryption process itself.
+You can [start a discussion](https://github.com/evanbaldonado/github-pages-jekyll-password-protection/discussions) on this repository or contact [password@evanbaldonado.com](mailto:password@evanbaldonado.com) with questions. The [PageCrypt repository](https://github.com/Greenheart/pagecrypt) also has additional information about the encryption process itself.
